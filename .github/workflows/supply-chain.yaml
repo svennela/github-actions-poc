@@ -22,7 +22,7 @@ jobs:
           java-version: '17'
 
       - name: Test
-        run: mvn test
+        run: mvn --no-transfer-progress test
 
       - name: Build Image
         id: build
