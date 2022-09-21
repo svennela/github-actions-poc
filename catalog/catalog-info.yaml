@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: gevans-petclinic
+  description: Spring PetClinic
+  tags:
+    - app-accelerator
+    - java
+    - spring
+    - tanzu
+  annotations:
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=gevans-petclinic'
+spec:
+  type: service
+  lifecycle: experimental
+  owner: default-team
