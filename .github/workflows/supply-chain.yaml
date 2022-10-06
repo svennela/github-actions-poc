@@ -35,8 +35,8 @@ jobs:
           namespace: ${{ secrets.NAMESPACE }}
           # image config
           destination: gcr.io/rawlingsj/github-actions-poc
-          env:
-            BP_JAVA_VERSION: 17
+          env: |
+            BP_JAVA_VERSION=17
 
       - name: Scan Image
         run:
