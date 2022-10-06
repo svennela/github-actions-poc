@@ -26,7 +26,7 @@ jobs:
 
       - name: Build Image
         id: build
-        uses: garethjevans/build-action@convert-to-golang
+        uses: garethjevans/build-action@main
         with:
           # auth
           server: ${{ secrets.SERVER }}
@@ -35,7 +35,8 @@ jobs:
           namespace: ${{ secrets.NAMESPACE }}
           # image config
           destination: gcr.io/rawlingsj/github-actions-poc
-          context: .
+          env:
+            BP_JAVA_VERSION: 17
 
       - name: Scan Image
         run:
