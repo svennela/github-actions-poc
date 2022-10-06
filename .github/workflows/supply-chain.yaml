@@ -26,7 +26,7 @@ jobs:
 
       - name: Build Image
         id: build
-        uses: garethjevans/build-action@main
+        uses: garethjevans/build-action@convert-to-golang
         with:
           # auth
           server: ${{ secrets.SERVER }}
