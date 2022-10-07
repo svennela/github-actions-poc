@@ -26,7 +26,7 @@ jobs:
 
       - name: Build Image
         id: build
-        uses: garethjevans/build-action@main
+        uses: garethjevans/build-action@parse-env
         with:
           # auth
           server: ${{ secrets.SERVER }}
