@@ -39,5 +39,8 @@ jobs:
             BP_JAVA_VERSION=17
 
       - name: Scan Image
-        run:
-          echo "${{ steps.build.outputs.name }}"
+        run: |
+          if [ "${{ steps.build.outputs.name }}" == "" ]; then
+            echo "::error::No output from previous step"
+            exit 1
+          fi
