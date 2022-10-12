@@ -49,3 +49,4 @@ jobs:
         uses: anchore/scan-action@v3
         with:
           image: "${{ steps.build.outputs.name }}"
+          fail-build: false
