@@ -38,9 +38,14 @@ jobs:
           env: |
             BP_JAVA_VERSION=17
 
-      - name: Scan Image
+      - name: Validate Output
         run: |
           if [ "${{ steps.build.outputs.name }}" == "" ]; then
             echo "::error::No output from previous step"
             exit 1
           fi
+
+      - name: Scan Image
+        uses: anchore/scan-action@v3
+        with:
+          image: "${{ steps.build.outputs.name }}"
