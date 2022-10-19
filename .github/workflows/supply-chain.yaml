@@ -23,6 +23,9 @@ jobs:
           persist-credentials: false
           path: ./.github/actions/build-image-action
 
+      - name: ghcr.io docker registry login
+        run: echo "${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}" | docker login ghcr.io -u "empty" --password-stdin
+
       - uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
