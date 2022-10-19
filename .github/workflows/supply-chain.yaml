@@ -16,6 +16,13 @@ jobs:
         with:
           fetch-depth: 0
 
+      - uses: actions/checkout@v2
+        with:
+          repository: vmware-tanzu/build-image-action
+          token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+          persist-credentials: false
+          path: ./.github/actions/build-image-action
+
       - uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
@@ -26,7 +33,7 @@ jobs:
 
       - name: Build Image
         id: build
-        uses: vmware-tanzu/build-image-action@main
+        uses: ./.github/actions/build-image-action
         with:
           # auth
           server: ${{ secrets.SERVER }}
