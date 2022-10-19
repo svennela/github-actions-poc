@@ -16,6 +16,7 @@ jobs:
         with:
           fetch-depth: 0
 
+      # Remove this after action is made public
       - uses: actions/checkout@v2
         with:
           repository: vmware-tanzu/build-image-action
@@ -23,8 +24,11 @@ jobs:
           persist-credentials: false
           path: ./.github/actions/build-image-action
 
+      # Remove this after action is made public
       - name: ghcr.io docker registry login
-        run: echo "${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}" | docker login ghcr.io -u "empty" --password-stdin
+        run: |
+          echo "${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}" | docker login ghcr.io -u "empty" --password-stdin
+          docker pull ghcr.io/vmware-tanzu/build-image-action:main
 
       - uses: actions/setup-java@v3
         with:
@@ -36,6 +40,7 @@ jobs:
 
       - name: Build Image
         id: build
+        #uses: vmware-tanzu/build-image-action@v1
         uses: ./.github/actions/build-image-action
         with:
           # auth
