@@ -49,7 +49,7 @@ jobs:
           ca_cert: ${{ secrets.CA_CERT }}
           namespace: ${{ secrets.NAMESPACE }}
           # image config
-          destination: gcr.io/rawlingsj/github-actions-poc
+          destination: gcr.io/ship-interfaces-dev/github-actions-poc
           env: |
             BP_JAVA_VERSION=17
 
