@@ -30,13 +30,13 @@ jobs:
 
       - name: Build Image
         id: build
-        uses: vmware-tanzu/build-image-action@main
+        uses: vmware-tanzu/build-image-action@v1-alpha
         with:
           # auth
           server: ${{ secrets.SERVER }}
           token: ${{ secrets.TOKEN }}
           ca_cert: ${{ secrets.CA_CERT }}
-          namespace: ${{ secrets.NAMESPACE }}
+          namespace: dev
           # image config
           destination: gcr.io/ship-interfaces-dev/github-actions-poc
           env: |
