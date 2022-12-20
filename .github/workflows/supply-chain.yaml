@@ -51,6 +51,6 @@ jobs:
         uses: anchore/scan-action@v3
         with:
           image: "${{ steps.build.outputs.name }}"
-          fail-build: true
           severity-cutoff: high
+          fail-build: false
           output-format: table
