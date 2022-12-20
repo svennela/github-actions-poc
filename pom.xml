@@ -94,7 +94,7 @@
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <!-- To Fix Grype -->
-      <version>8.0.30</version>
+      <version>8.0.31</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
