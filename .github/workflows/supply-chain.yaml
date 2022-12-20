@@ -53,3 +53,4 @@ jobs:
           image: "${{ steps.build.outputs.name }}"
           fail-build: true
           severity-cutoff: high
+          output-format: table
