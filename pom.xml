@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.springframework.samples</groupId>
   <artifactId>gevans-petclinic</artifactId>
-  <version>2.6.0-SNAPSHOT</version>
+  <version>2.7.0-SNAPSHOT</version>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.6.9</version>
+    <version>2.7.4</version>
   </parent>
   <name>petclinic</name>
 
@@ -20,13 +20,13 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     <!-- Web dependencies -->
-    <webjars-bootstrap.version>5.2.3</webjars-bootstrap.version>
+    <webjars-bootstrap.version>5.2.2</webjars-bootstrap.version>
     <webjars-font-awesome.version>4.7.0</webjars-font-awesome.version>
 
     <h2.version>2.1.210</h2.version>
     <jacoco.version>0.8.8</jacoco.version>
     <nohttp-checkstyle.version>0.0.10</nohttp-checkstyle.version>
-    <spring-format.version>0.0.31</spring-format.version>
+    <spring-format.version>0.0.35</spring-format.version>
 
   </properties>
 
@@ -35,31 +35,45 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-actuator</artifactId>
+      <version>2.7.4</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-cache</artifactId>
+      <version>2.7.4</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-jpa</artifactId>
+      <version>2.7.4</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
+      <version>2.7.4</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-validation</artifactId>
+      <version>2.7.4</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-thymeleaf</artifactId>
+      <version>2.7.4</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
+      <version>2.7.4</version>
       <scope>test</scope>
+    </dependency>
+
+    <!-- To Fix Grype -->
+    <dependency>
+      <groupId>org.yaml</groupId>
+      <artifactId>snakeyaml</artifactId>
+      <version>1.33</version>
     </dependency>
 
     <!-- Databases - Uses H2 by default -->
@@ -72,16 +86,22 @@
     <dependency>
       <groupId>org.hsqldb</groupId>
       <artifactId>hsqldb</artifactId>
+      <!-- To Fix Grype -->
+      <version>2.7.1</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
+      <!-- To Fix Grype -->
+      <version>8.0.31</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
+      <!-- To Fix Grype -->
+      <version>42.5.1</version>
       <scope>runtime</scope>
     </dependency>
 
@@ -89,32 +109,42 @@
     <dependency>
       <groupId>javax.cache</groupId>
       <artifactId>cache-api</artifactId>
+      <!-- To Fix Grype -->
+      <version>1.1.1</version>
     </dependency>
     <dependency>
       <groupId>org.ehcache</groupId>
       <artifactId>ehcache</artifactId>
+      <!-- To Fix Grype -->
+      <version>3.10.8</version>
     </dependency>
 
     <!-- webjars -->
     <dependency>
       <groupId>org.webjars</groupId>
       <artifactId>webjars-locator-core</artifactId>
+      <!-- To Fix Grype -->
+      <version>0.52</version>
     </dependency>
     <dependency>
       <groupId>org.webjars.npm</groupId>
       <artifactId>bootstrap</artifactId>
-      <version>${webjars-bootstrap.version}</version>
+      <!-- To Fix Grype -->
+      <version>5.2.3</version>
     </dependency>
     <dependency>
       <groupId>org.webjars.npm</groupId>
       <artifactId>font-awesome</artifactId>
-      <version>${webjars-font-awesome.version}</version>
+      <!-- To Fix Grype -->
+      <version>4.7.0</version>
     </dependency>
     <!-- end of webjars -->
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-devtools</artifactId>
+      <!-- To Fix Grype -->
+      <version>2.7.4</version>
       <optional>true</optional>
     </dependency>
   </dependencies>
@@ -142,7 +172,7 @@
           <dependency>
             <groupId>com.puppycrawl.tools</groupId>
             <artifactId>checkstyle</artifactId>
-            <version>10.5.0</version>
+            <version>8.45.1</version>
           </dependency>
           <dependency>
             <groupId>io.spring.nohttp</groupId>
